@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Vistas</title>
+  <link rel="stylesheet" href="/css/style.css" />
+</head>
+<body>
+  <main class="shell">
+    <section id="auth-view" class="auth card">
+      <p class="eyebrow">Watchlist</p>
+      <h1>Peliculas y series</h1>
+      <div class="tabs">
+        <button class="tab active" type="button" data-mode="login">Entrar</button>
+        <button class="tab" type="button" data-mode="register">Crear cuenta</button>
+      </div>
+      <form id="auth-form">
+        <label>Usuario <input name="username" required minlength="3" maxlength="20" autocomplete="username" /></label>
+        <label>Contrasena <input name="password" type="password" required minlength="6" autocomplete="current-password" /></label>
+        <p id="auth-error" class="error" hidden></p>
+        <button id="auth-submit" class="primary" type="submit">Entrar</button>
+      </form>
+    </section>
+    <section id="app-view" class="hidden">
+      <header>
+        <div><p class="eyebrow">Vanilla JS · Mongo</p><h1>Vistas</h1></div>
+        <div class="who"><strong id="user-name"></strong><button id="logout" class="ghost" type="button">Salir</button></div>
+      </header>
+      <nav id="filters" class="tabs"></nav>
+      <form id="title-form" class="card form">
+        <input id="title" placeholder="Titulo" maxlength="80" required />
+        <select id="kind"><option value="pelicula">Pelicula</option><option value="serie">Serie</option></select>
+        <select id="status"><option value="por-ver">Por ver</option><option value="viendo">Viendo</option><option value="vista">Vista</option></select>
+        <input id="rating" type="number" min="0" max="5" placeholder="0-5" />
+        <button class="primary" type="submit">Agregar</button>
+      </form>
+      <p id="form-error" class="error" hidden></p>
+      <input id="search" type="search" placeholder="Buscar" />
+      <ul id="list"></ul>
+    </section>
+  </main>
+  <script type="module" src="/js/app.js"></script>
+</body>
+</html>
